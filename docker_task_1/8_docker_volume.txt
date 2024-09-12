@@ -1,0 +1,258 @@
+[root@ip-172-31-21-6 ec2-user]# docker volume inspect my1stvol
+[
+    {
+        "CreatedAt": "2024-09-12T08:28:23Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/my1stvol/_data",
+        "Name": "my1stvol",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+[root@ip-172-31-21-6 ec2-user]# docker inspect task_vol_cont
+[
+    {
+        "Id": "81b5f951f992e8015dac36e39c9ec69d34fc56140b6c127236953dc2f6d108be",
+        "Created": "2024-09-12T09:04:56.273350666Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "mysqld"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 12704,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-09-12T09:04:56.694468607Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:680b8c60dce62c25af20deda8764e29191709a4495b116f6b4d655061d3bd8ff",
+        "ResolvConfPath": "/var/lib/docker/containers/81b5f951f992e8015dac36e39c9ec69d34fc56140b6c127236953dc2f6d108be/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/81b5f951f992e8015dac36e39c9ec69d34fc56140b6c127236953dc2f6d108be/hostname",
+        "HostsPath": "/var/lib/docker/containers/81b5f951f992e8015dac36e39c9ec69d34fc56140b6c127236953dc2f6d108be/hosts",
+        "LogPath": "/var/lib/docker/containers/81b5f951f992e8015dac36e39c9ec69d34fc56140b6c127236953dc2f6d108be/81b5f951f992e8015dac36e39c9ec69d34fc56140b6c127236953dc2f6d108be-json.log",
+        "Name": "/task_vol_cont",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "my1stvol:/myvol1"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                28,
+                162
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 65536,
+                    "Soft": 32768
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/9c88f49aadf743a471f7cda32beeb679f6f6184b85a99d106a48336f9e183d41-init/diff:/var/lib/docker/overlay2/55774b2e6d79b62f750e97f409ffdf7db2f38abaec2d6a16eb430f11b72ea868/diff:/var/lib/docker/overlay2/091f520038a4c0db61890846fa226ec31c8885eee0b5f721048bdf6d952ab33e/diff:/var/lib/docker/overlay2/dedcee11d0deb1dcaa5163a750af7c2eb080d499ef600a2038b64bbc5e064f8f/diff:/var/lib/docker/overlay2/c5003fe931b7293b3ac2fd27bea6ce07261bc0754890e834ee4f824872ef1ccc/diff:/var/lib/docker/overlay2/4607cbdb21a3dfddd72c6c51fcf24691794822e96eca32fa7fbc44bda5ee0e6a/diff:/var/lib/docker/overlay2/dfc9fe6a0293a12069bd0b2f6d9d02c133aef4d3939aff52b1183fc962b88b4c/diff:/var/lib/docker/overlay2/974e5af03973fb115310bed1856de81b4f9fa8c222e7e688ca1bab7521a15ed5/diff:/var/lib/docker/overlay2/d9f33146814f5b568590909099e081c3083fdb7035725a26729e898fcbf94fce/diff:/var/lib/docker/overlay2/3e718da949ad831e531d317567d3de24130cbf19814e09c1ad037d530e4f9cc1/diff:/var/lib/docker/overlay2/449b6065e16779096395ddbd622c0c54262588e781c4c4acac483e25b366d354/diff",
+                "MergedDir": "/var/lib/docker/overlay2/9c88f49aadf743a471f7cda32beeb679f6f6184b85a99d106a48336f9e183d41/merged",
+                "UpperDir": "/var/lib/docker/overlay2/9c88f49aadf743a471f7cda32beeb679f6f6184b85a99d106a48336f9e183d41/diff",
+                "WorkDir": "/var/lib/docker/overlay2/9c88f49aadf743a471f7cda32beeb679f6f6184b85a99d106a48336f9e183d41/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "my1stvol",
+                "Source": "/var/lib/docker/volumes/my1stvol/_data",
+                "Destination": "/myvol1",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "41a39f9d5b654e4d494076c7e3c658af63421d145476c0c50d873d8db31e5f2d",
+                "Source": "/var/lib/docker/volumes/41a39f9d5b654e4d494076c7e3c658af63421d145476c0c50d873d8db31e5f2d/_data",
+                "Destination": "/var/lib/mysql",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "81b5f951f992",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3306/tcp": {},
+                "33060/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MYSQL_ROOT_PASSWORD=root",
+                "MYSQL_DATABASE=mydb",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.17",
+                "MYSQL_MAJOR=innovation",
+                "MYSQL_VERSION=9.0.1-1.el9",
+                "MYSQL_SHELL_VERSION=9.0.1-1.el9"
+            ],
+            "Cmd": [
+                "mysqld"
+            ],
+            "Image": "task_cont:latest",
+            "Volumes": {
+                "/var/lib/mysql": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "e882243bfe78afe4837c67b287420d8117c8630b19910495bbe92f46d93e480f",
+            "SandboxKey": "/var/run/docker/netns/e882243bfe78",
+            "Ports": {
+                "3306/tcp": null,
+                "33060/tcp": null
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "5b8ab640830e0b18287b7a4fc1f2efa7deffcfdcec4bed9a0395073d2e9e8688",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "NetworkID": "c09f58831dd73f3e8902ec4f091be34b253adf99d71497b5b375d74939ae99a7",
+                    "EndpointID": "5b8ab640830e0b18287b7a4fc1f2efa7deffcfdcec4bed9a0395073d2e9e8688",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+[root@ip-172-31-21-6 ec2-user]# 
